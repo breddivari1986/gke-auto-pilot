@@ -1,0 +1,18 @@
+steps:
+  - name: 'hemanthkopalle/terraform:bh1'
+    args:
+      - '-c'
+      - |
+        cd ${_DIR}
+        terraform init -backend-config=${_BACKEND_CONFIG}
+    id: terraform init
+    entrypoint: sh
+  - name: 'hemanthkopalle/terraform:bh1'
+    args:
+      - '-c'
+      - |
+        cd ${_DIR}
+        terraform plan -var-file=${_TF_VARS}
+    id: terraform plan
+    entrypoint: sh
+timeout: 86400s
