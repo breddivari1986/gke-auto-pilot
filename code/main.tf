@@ -10,13 +10,13 @@ provider "kubernetes" {
 module "gke" {
   source                     = "terraform-google-modules/kubernetes-engine/google"
   project_id                 = var.project_id
-  name                       = "gke-test-1"
-  region                     = "us-east1"
-  zones                      = ["us-east1-a", "us-east1-b", "us-east1-f"]
-  network                    = "gke-poc-vpc"
-  subnetwork                 = "gke-poc-east1"
-  ip_range_pods              = "gke-pods"
-  ip_range_services          = "gke-svc"
+  name                       = var.name
+  region                     = var.region
+  zones                      = var.zones
+  network                    = var.network
+  subnetwork                 = var.subnetwork
+  ip_range_pods              = var.ip_range_pods
+  ip_range_services          = var.ip_range_services
   http_load_balancing        = false
   network_policy             = false
   horizontal_pod_autoscaling = true
