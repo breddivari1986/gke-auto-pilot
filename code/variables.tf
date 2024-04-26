@@ -357,7 +357,7 @@ variable "monitoring_service" {
 variable "create_service_account" {
   type        = bool
   description = "Defines if service account specified to run nodes should be created."
-  default     = true
+  default     = false
 }
 
 variable "grant_registry_access" {
