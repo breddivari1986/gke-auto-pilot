@@ -20,6 +20,7 @@ module "gke" {
   http_load_balancing        = false
   network_policy             = false
   horizontal_pod_autoscaling = true
-  filestore_csi_driver       = false  
+  filestore_csi_driver       = false
+  create_service_account = var.create_service_account
 
 }
