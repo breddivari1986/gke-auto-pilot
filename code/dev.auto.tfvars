@@ -9,3 +9,4 @@ ip_range_services           = "ip-range-svc-autopilot"
 region                   = "us-east1"
 master_ipv4_cidr_block   = "192.168.0.0/20" #For Master Cluster
 initial_node_count = 1
+service_account = "gke-svc-acc@gke-svc-prj.iam.gserviceaccount.com"
