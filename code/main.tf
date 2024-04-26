@@ -22,5 +22,6 @@ module "gke" {
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
   create_service_account = var.create_service_account
+  service_account = var.service_account
 
 }
