@@ -21,9 +21,9 @@ module "gke" {
   ip_range_services          = var.ip_range_services
   release_channel            = "REGULAR"
   http_load_balancing        = false
-  network_policy             = false
+#  network_policy             = false
   horizontal_pod_autoscaling = true
-  filestore_csi_driver       = false
+#  filestore_csi_driver       = false
   create_service_account = var.create_service_account
   service_account = var.service_account
 
