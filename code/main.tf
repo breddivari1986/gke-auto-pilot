@@ -1,7 +1,7 @@
 
 module "gke" {
   source  = "terraform-google-modules/kubernetes-engine/google//modules/beta-autopilot-private-cluster"          
-  version = "~> 30.0"
+#  version = "~> 30.0"
  # source                     = "terraform-google-modules/kubernetes-engine/google"
   project_id                 = var.project_id
   network_project_id         = "gke-host-prj"
