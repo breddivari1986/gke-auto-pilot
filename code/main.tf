@@ -1,17 +1,11 @@
-# google_client_config and kubernetes provider must be explicitly specified like the following.
-data "google_client_config" "default" {}
-
-provider "kubernetes" {
-  host                   = "https://${module.gke.endpoint}"
-  token                  = data.google_client_config.default.access_token
-  cluster_ca_certificate = base64decode(module.gke.ca_certificate)
-}
 
 module "gke" {
-  source  = "terraform-google-modules/kubernetes-engine/google//modules/beta-autopilot-private-cluster"
+  source  = "terraform-google-modules/kubernetes-engine/google//modules/beta-autopilot-private-cluster"          
   version = "~> 30.0"
  # source                     = "terraform-google-modules/kubernetes-engine/google"
   project_id                 = var.project_id
+  network_project_id         = "gke-host-prj"
+  zones                      = ["us-east1-b", "us-central1-c", "us-central1-d"]
   regional                   = true
   name                       = var.name
   region                     = var.region
