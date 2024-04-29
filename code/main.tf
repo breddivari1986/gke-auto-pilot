@@ -5,7 +5,7 @@ module "gke" {
  # source                     = "terraform-google-modules/kubernetes-engine/google"
   project_id                 = var.project_id
   network_project_id         = "gke-host-prj"
-  zones                      = ["us-east1-b", "us-central1-c", "us-central1-d"]
+  zones                      = var.zones
   regional                   = true
   name                       = var.name
   region                     = var.region
@@ -14,7 +14,7 @@ module "gke" {
   ip_range_pods              = var.ip_range_pods
   ip_range_services          = var.ip_range_services
   release_channel            = "REGULAR"
-  http_load_balancing        = false
+  http_load_balancing        = true
 #  network_policy             = false
   horizontal_pod_autoscaling = true
 #  filestore_csi_driver       = false
